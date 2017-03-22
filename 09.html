@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>react-组件属性</title>
+	<script src="../react-15.3.1/build/react.js"></script>
+    <script src="../react-15.3.1/build/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+</head>
+<body>
+	<div id="demo"></div>
+	<script type="text/babel">
+		{/*在React组件中的绝大数属性可通过this.props对象拿到*/}
+		{/*在jsx语法中内置了一个React.Children.map的方法，可通过它拿到组件里的所有子元素，并将其转化为相应的类型*/}
+		var Message = React.createClass({
+			render : function(){
+				return (
+				<div>
+					{React.Children.map(this.props.children,function(child){
+						return <li>{child}</li>
+					})}
+				</div>
+				)
+			}
+		})
+		ReactDOM.render(<Message><h1>hello</h1><h1>world</h1></Message>,document.getElementById('demo'));
+
+	</script>
+</body>
+</html>
