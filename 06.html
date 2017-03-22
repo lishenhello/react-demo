@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>react的注释</title>
+	 <script src="../react-15.3.1/build/react.js"></script>
+    <script src="../react-15.3.1/build/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+</head>
+<body>
+	<div id="demo"></div>
+	<script type="text/babel">
+		{/*react中的注释必须用一个{}的形式包裹起来且里面采用‘/**/’的形式，否则会报错。*/}
+		ReactDOM.render(<h1>我走过的桥比你走过的路还长!</h1>,document.getElementById('demo'))
+	</script>
+</body>
+</html>
