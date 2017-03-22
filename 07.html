@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <script src="../react-15.3.1/build/react.js"></script>
+    <script src="../react-15.3.1/build/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+	<meta charset="UTF-8">
+	<title>react-遍历</title>
+</head>
+<body>
+	<div id="demo"></div>
+	<script type="text/babel">
+		var myStyle = {
+			backgroundColor : 'skyblue',
+			color : 'white'
+
+		}
+		var arr = [<h1>1</h1>,<h1>2</h1>,<h1>'我是一个兵'</h1>,<h1>'来自老百姓'</h1>]
+		{/*react允许插入数组，插入数组后他会自动将其遍历*/}
+		ReactDOM.render(<div style={myStyle}>{arr}</div>,document.getElementById('demo'))
+	</script>
+</body>
+</html>
