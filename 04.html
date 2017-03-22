@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>react初识</title>
+	 <script src="../react-15.3.1/build/react.js"></script>
+    <script src="../react-15.3.1/build/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+</head>
+<body>
+	<div id="aa"></div>
+	<script type="text/babel">
+	var Homepage = React.createClass({
+		render:function(){
+		return (
+		<div>
+			<h1>这是一句很成熟的话语</h1>
+			<Centerpage/>
+		</div>
+		)
+		}
+	})
+	var Centerpage = React.createClass({
+	render:function(){
+		return (<div>
+				<h2>确实没错</h2>
+				<Endpage/>
+		</div>)
+	}
+	})
+	var Endpage = React.createClass({
+	render:function(){
+		return (
+				<h3>你也这样认为吗</h3>
+		)
+	}
+	})
+		ReactDOM.render(<Homepage/>,document.getElementById('aa'));
+	</script>
+</body>
+</html>
