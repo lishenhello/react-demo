@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../react-15.3.1/build/react.js"></script>
+    <script src="../react-15.3.1/build/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+       var Message = React.createClass({
+            render:function(){
+                return (<h3>写代码很有趣嘛</h3>)
+            }
+       })
+        ReactDOM.render(<Message/>,document.getElementById('example'));
+    </script>
+  </body>
+</html>
