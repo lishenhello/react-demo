@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>颜色样式</title>
+	 <script src="../react-15.3.1/build/react.js"></script>
+    <script src="../react-15.3.1/build/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+</head>
+<body>
+<!-- 在react中 设置样式为内联样式 采用驼峰命名法，单位px可省略 -->
+	<script type="text/babel">
+		var myStyle = {
+			backgroundColor : "pink",
+			color : "white"
+		}
+		var Message = React.createClass({
+			render : function(){
+				return (<h1 style={myStyle}>hello world!</h1>)
+			}
+		})
+		ReactDOM.render(<Message/>,document.body)
+	</script>
+</body>
+</html>
