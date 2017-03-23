@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>react-状态设置</title>
+	 <script src="../react-15.3.1/build/react.js"></script>
+    <script src="../react-15.3.1/build/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+</head>
+<body>
+	<div id="demo"></div>
+	<script type="text/babel">
+		{/*我们可将组件看做一个状态机，可通过getInitialState来设置初始状态，可通过setState来改变状态，可通过this.state[状态名]来获取状态。*/}
+		var Message = React.createClass({
+			getInitialState : function(){
+				return {liked : false}
+			},
+			handleClick : function(){
+				this.setState({liked : !this.state.liked})
+			},
+			render : function(){
+				return (<h1 onClick={this.handleClick}>点击切换liked----
+				{this.state.liked?'yes':'no'}</h1>)
+			}
+		})
+		ReactDOM.render(<Message/>,document.getElementById('demo'))
+	</script>
+</body>
+</html>
