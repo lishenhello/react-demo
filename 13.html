@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>react-state详解</title>
+	<script src="../react-15.3.1/build/react.js"></script>
+    <script src="../react-15.3.1/build/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+</head>
+<body>
+	<div id="demo"></div>
+	<script type="text/babel">
+		{/*对于表单等时常要改动的属性值我们可通过this.state[属性名]*/}
+		var Message = React.createClass({
+		getInitialState : function(){
+			return {value : '请输入名字'}
+		},
+		handleChange : function(event){
+			this.setState ({value : this.refs.txtValue.value})
+		},
+		render : function(){
+			return (<div>
+				<input type="text" onChange={this.handleChange} ref="txtValue" value={this.state.value}/>
+				<h1 style={getStyle}>{this.state.value}</h1>
+			</div>)
+		}
+		})
+		var getStyle = {
+			border : '1px solid blue',
+			color : 'red'
+		}
+		ReactDOM.render(<Message/>,document.getElementById('demo'));
+	</script>
+</body>
+</html>
