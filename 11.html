@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>react-ref属性</title>
+	 <script src="../react-15.3.1/build/react.js"></script>
+    <script src="../react-15.3.1/build/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+</head>
+<body>
+	<div id="demo"></div>
+	<script type="text/babel">
+	{/*在真实DOM中设置一个ref属性，可在React虚拟dom中通过this.refs[refName]拿到对应属性所在的元素*/}
+		var Message = React.createClass({
+			click : function(){
+				console.log(this.refs.txtValue.value);
+			},
+			render : function(){
+				return (
+					<div>
+						<input type="text" ref='txtValue'/>
+						<input type="button" value="Focus the text input" onClick={this.click}/>
+					</div>
+				)
+			}
+		})
+		ReactDOM.render(<Message/>,document.getElementById('demo'));
+	</script>
+</body>
+</html>
